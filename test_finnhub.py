@@ -66,7 +66,6 @@ def test_finnhub_toolkit():
     result = market_news._execute()
 
     assert result
-    print(result)
 
 
 if __name__ == "__main__":

@@ -9,7 +9,7 @@ from finnhub_market_news import FinnhubMarketNewsTool
 from finnhub_quote import FinnhubQuoteTool
 from finnhub_technical_indicators import FinnhubTechnicalIndicatorsTool
 
-class FinnhubToolkit():
+class FinnhubToolkit(BaseToolkit, ABC):
     name: str = "FinnhubToolkit"
     description: "Toolkit that contains various tools to interact with Finnhubs api to get financial information"
 

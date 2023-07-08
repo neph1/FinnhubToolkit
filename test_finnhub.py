@@ -1,6 +1,6 @@
 from datetime import datetime
 import finnhub
-from finnhub_toolkit import FinnhubToolkit
+from FinnhubSuperAgi import FinnhubToolkit
 from finnhub_basic_financials import FinnhubBasicFinancialsTool
 from finnhub_candles import FinnhubCandlesTool
 from finnhub_company_news import FinnhubCompanyNewsTool

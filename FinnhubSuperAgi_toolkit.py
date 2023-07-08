@@ -11,7 +11,7 @@ from finnhub_technical_indicators import FinnhubTechnicalIndicatorsTool
 
 class FinnhubToolkit():
     name: str = "FinnhubToolkit"
-    description: "Toolkit that contains various tools to interact with Finnhubs api"
+    description: "Toolkit that contains various tools to interact with Finnhubs api to get financial information"
 
     def get_tools(self) -> List[BaseTool]:
         return [FinnhubCompanyNewsTool(), FinnhubCandlesTool(), FinnhubBasicFinancialsTool(), FinnhubTechnicalIndicatorsTool(), FinnhubQuoteTool(), FinnhubMarketNewsTool()]

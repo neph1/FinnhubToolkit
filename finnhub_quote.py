@@ -1,4 +1,4 @@
-import finnhub
+from finnhub import Client
 from pydantic import BaseModel, Field
 from typing import Type, Optional
 from superagi.tools.base_tool import BaseTool
@@ -14,5 +14,5 @@ class FinnhubQuoteTool(BaseTool):
 
     def _execute(self, symbol: str):
         api_key = self.get_tool_config("FINNHUB_API_KEY")
-        finnhub_client = finnhub.Client(api_key=api_key)
+        finnhub_client = Client(api_key=api_key)
         return finnhub_client.quote(symbol)

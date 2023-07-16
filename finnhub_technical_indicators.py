@@ -1,4 +1,4 @@
-import finnhub
+from finnhub import Client
 from pydantic import BaseModel, Field
 from typing import Type, Optional
 from superagi.tools.base_tool import BaseTool
@@ -19,5 +19,5 @@ class FinnhubTechnicalIndicatorsTool(BaseTool):
 
     def _execute(self, symbol: str, from_time: int, to_time: int, resolution = 'D', indicator = 'sma', timeperiod = 3):
         api_key = self.get_tool_config("FINNHUB_API_KEY")
-        finnhub_client = finnhub.Client(api_key=api_key)
+        finnhub_client = Client(api_key=api_key)
         return finnhub_client.technical_indicator(symbol=symbol, resolution=resolution, _from=int(from_time), to=int(to_time), indicator=indicator, indicator_fields={"timeperiod": int(timeperiod)})

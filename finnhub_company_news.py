@@ -1,4 +1,4 @@
-import finnhub
+from finnhub import Client
 from pydantic import BaseModel, Field
 from typing import Type, Optional
 from superagi.tools.base_tool import BaseTool
@@ -16,5 +16,5 @@ class FinnhubCompanyNewsTool(BaseTool):
 
     def _execute(self, symbol: str, from_date: str, to_date: str):
         api_key = self.get_tool_config("FINNHUB_API_KEY")
-        finnhub_client = finnhub.Client(api_key=api_key)
+        finnhub_client = Client(api_key=api_key)
         return finnhub_client.company_news(symbol, _from=from_date, to=to_date)
